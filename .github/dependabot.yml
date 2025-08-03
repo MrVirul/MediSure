@@ -1,0 +1,7 @@
+version: 2
+updates:
+  - package-ecosystem: "maven"
+    directory: "/" # Adjust if your pom.xml is in a subdirectory like /backend
+    schedule:
+      interval: "weekly" # Options: daily, weekly, monthly
+    open-pull-requests-limit: 5
