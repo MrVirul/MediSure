@@ -1,4 +1,4 @@
-package com.progrp251.medisure.controller;
+package com.progrp251.medisure.client;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
