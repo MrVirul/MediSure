@@ -3,7 +3,7 @@ package com.progrp251.medisure.client;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.validation.BindingResult;
 import jakarta.validation.Valid;
-import java.util.List;
+//import java.util.List;
 
 @RestController
 @RequestMapping("/api/clients")
