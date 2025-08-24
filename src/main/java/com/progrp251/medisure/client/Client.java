@@ -1,38 +1,53 @@
 package com.progrp251.medisure.client;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.*;
+import com.progrp251.medisure.claim.Claim;
+import com.progrp251.medisure.policy.Policy;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.web.bind.annotation.GetMapping;
+
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
-@Data
 @NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class Client {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(unique = true, nullable = false)
-    @Pattern(regexp = "^([0-9]{9}[vVxX]|[0-9]{12})$", message = "Invalid NIC format")
+    //Basic Information
+    private Long clientID;
+    private String firstName;
+    private String lastName;
     private String nic;
-
-    @NotBlank(message = "Name is required")
-    private String name;
-
-    @Pattern(regexp = "^0[1-9][0-9]{8}$", message = "Invalid Sri Lankan phone number")
-    private String phoneNumber;
-
-    @NotBlank
-    private String address;
-
-    @Past
     private LocalDate dateOfBirth;
 
-    @Email
+    //Contact Details
     private String email;
+    private String phoneNumber;
+    private String address;
 
-    private String gender;
-    private String bloodGroup;
+    //Authentication & Account
+    private String username;
+    private String password;
+    private String role;
+    private boolean active;
+
+    //Insurance Details (Relationships)
+    //one to many(mappedBy = client)
+    private List<Policy> policies;
+
+    //one to many
+    private  List<Claim> claims;
+
+    //metadata
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+
+
+
 }
