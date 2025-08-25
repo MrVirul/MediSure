@@ -16,7 +16,7 @@ import java.util.function.Function;
 @Component
 public class JwtTokenProvider {
 
-    @Value("${app.jwt.secret:mySecretKey}")
+    @Value("${app.jwt.secret:client-secret}")
     private String jwtSecret;
 
     @Value("${app.jwt.expiration:86400000}") // 24 hours

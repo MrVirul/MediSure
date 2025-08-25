@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
@@ -17,12 +18,20 @@ import java.util.Arrays;
 @EnableWebSecurity // Enables Spring Security's web security support
 public class SecurityConfig {
     // Define public URLs that don't require authentication
-    private static final String[] PUBLIC_URLS = {"/", "/login**", "/oauth2/**", "/auth/**"};
-    // TODO: Add more public URLs as needed, for example:
-    // TODO: add url (/register) for user registration
-    // TODO: add url (/api/public/**) for public API endpoints
-    // TODO: add url (/swagger-ui/**) for Swagger documentation
-    // TODO: add url (/v3/api-docs/**) for OpenAPI documentation
+    private static final String[] PUBLIC_URLS = {
+            "/",
+            "/login**",
+            "/oauth2/**",
+            "/auth/**",
+            "/register",                    // User registration endpoint
+            "/api/public/**",              // Public API endpoints
+            "/swagger-ui/**",              // Swagger UI documentation
+            "/swagger-ui.html",            // Swagger UI main page
+            "/v3/api-docs/**",             // OpenAPI documentation
+            "/v3/api-docs",                // OpenAPI docs root
+            "/swagger-resources/**",       // Swagger resources
+            "/webjars/**"                  // WebJars for Swagger UI assets
+    };
 
     private static final String LOGOUT_SUCCESS_URL = "/"; // URL to redirect after logout
 
@@ -46,7 +55,7 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity
                 .cors(cors -> cors.configurationSource(corsConfigurationSource())) // Enable CORS with custom configuration
-                .csrf(csrf -> csrf.disable()) // Disable CSRF protection (common for stateless APIs)
+                .csrf(AbstractHttpConfigurer::disable) // Disable CSRF protection (common for stateless APIs)
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // Use stateless sessions (no session cookies)
                 .authorizeHttpRequests(auth -> auth
