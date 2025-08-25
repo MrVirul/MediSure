@@ -1,4 +1,4 @@
 package com.progrp251.medisure.user;
 
-public class Admin {
+public class UserService {
 }
