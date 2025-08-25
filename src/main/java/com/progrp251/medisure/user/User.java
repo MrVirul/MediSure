@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.management.relation.Role;
 
 @Entity
 @Table(name = "user")
@@ -41,14 +40,13 @@ public class User {
     @Setter
     private boolean enabled=true;
 
-    public enum role{
+    public enum Role {
         Insurance_Operation_Manager,
         Customer_Support_Service,
         Claims_Office,
         Finance_Executive,
         Sales_Officer,
         Medical_Records_Coordinator
-
     }
 
 }
