@@ -1,13 +1,11 @@
 package com.progrp251.medisure.user;
 
 import jakarta.persistence.*;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class User {
 
     @Getter
@@ -31,6 +29,17 @@ public class User {
     @Column(nullable = false, unique = true)
     private String email;
 
+    // New fields for OAuth2 profile data
+    @Getter
+    @Setter
+    @Column(name = "full_name")
+    private String fullName; // nullable
+
+    @Getter
+    @Setter
+    @Column(name = "picture_url", length = 1000)
+    private String pictureUrl; // nullable
+
     @Getter
     @Setter
     @Enumerated(EnumType.STRING)
@@ -38,7 +47,7 @@ public class User {
 
     @Getter
     @Setter
-    private boolean enabled=true;
+    private boolean enabled = true;
 
     public enum Role {
         Insurance_Operation_Manager,

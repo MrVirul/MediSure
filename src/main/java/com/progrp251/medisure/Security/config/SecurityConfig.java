@@ -1,5 +1,6 @@
 package com.progrp251.medisure.Security.config;
 
+import com.progrp251.medisure.Security.oauth.CustomOAuth2UserService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -43,6 +44,12 @@ public class SecurityConfig {
 
     private static final String LOGOUT_SUCCESS_URL = "/";
 
+    private final CustomOAuth2UserService customOAuth2UserService;
+
+    public SecurityConfig(CustomOAuth2UserService customOAuth2UserService) {
+        this.customOAuth2UserService = customOAuth2UserService;
+    }
+
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
@@ -67,9 +74,11 @@ public class SecurityConfig {
                         .loginPage("/login").permitAll()
                         .defaultSuccessUrl("/", true)
                 )
-                .logout(logout -> logout.logoutSuccessUrl("/").permitAll())
+                .logout(logout -> logout.logoutSuccessUrl(LOGOUT_SUCCESS_URL).permitAll())
                 .oauth2Login(oauth2 -> oauth2
                         .loginPage("/login")
+                        .userInfoEndpoint(userInfo -> userInfo.userService(customOAuth2UserService))
+                        .defaultSuccessUrl("/", true)
                 )
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(PUBLIC_URLS).permitAll()

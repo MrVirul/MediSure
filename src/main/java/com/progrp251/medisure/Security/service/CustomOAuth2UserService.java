@@ -9,7 +9,7 @@ import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 
-@Service
+@Service("clientOAuth2UserService")
 public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 
     private final ClientRepository clientRepository;

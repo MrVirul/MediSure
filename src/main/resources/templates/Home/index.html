@@ -14,7 +14,7 @@
         <div class="flex justify-between items-center h-16">
             <!-- Logo -->
             <div class="flex items-center">
-                <img src="/images/logo.png" alt="HealthGuard LK Logo" class="h-8 w-8 mr-2"/>
+                <img src="/images/logo.png" alt="HealthGuard LK Logo" class="h-32 w-32 mr-2"/>
             </div>
 
             <!-- Desktop Navigation -->
@@ -35,7 +35,7 @@
                     <span class="text-gray-700 mr-4" th:text="${#authentication.name}"></span>
                     <form th:action="@{/logout}" method="post" class="inline">
                         <button type="submit"
-                                class="btn-secondary text-white px-6 py-2 rounded-lg shadow-lg">
+                                class="btn-secondary text-black px-6 py-2 rounded-lg shadow-lg">
                             Logout
                         </button>
                     </form>
@@ -58,7 +58,7 @@
                 <!-- Mobile Login/Logout -->
                 <div sec:authorize="!isAuthenticated()">
                     <a href="/oauth2/authorization/google"
-                       class="btn-primary text-white px-6 py-2 rounded-lg block w-fit shadow-lg">
+                       class="btn-primary text-black px-6 py-2 rounded-lg block w-fit shadow-lg">
                         Login with Google
                     </a>
                 </div>
@@ -66,7 +66,7 @@
                     <span class="text-gray-700 block mb-2" th:text="${#authentication.name}"></span>
                     <form th:action="@{/logout}" method="post">
                         <button type="submit"
-                                class="btn-secondary text-white px-6 py-2 rounded-lg w-fit shadow-lg">
+                                class="btn-secondary text-black px-6 py-2 rounded-lg w-fit shadow-lg">
                             Logout
                         </button>
                     </form>
