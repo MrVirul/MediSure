@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MediSure - Affordable Health Insurance for Sri Lankans</title>
+    <title>HealthGuard LK - Affordable Health Insurance for Sri Lankans</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Previous styles remain the same -->
 </head>
@@ -14,7 +14,7 @@
         <div class="flex justify-between items-center h-16">
             <!-- Logo -->
             <div class="flex items-center">
-                <img src="/images/logo.png" alt="MediSure LK Logo" class="h-8 w-8 mr-2"/>
+                <img src="/images/logo.png" alt="HealthGuard LK Logo" class="h-8 w-8 mr-2"/>
             </div>
 
             <!-- Desktop Navigation -->
@@ -27,24 +27,24 @@
                 <!-- Login/Logout buttons based on authentication status -->
                 <div sec:authorize="!isAuthenticated()">
                     <a href="/login"
-                       class="bg-cyan-600 hover:bg-cyan-700 text-white px-6 py-2 rounded-lg shadow-lg">
+                       class="btn-primary text-black px-6 py-2 rounded-lg shadow-lg">
                         Login
                     </a>
                 </div>
-<!--                <div sec:authorize="isAuthenticated()">-->
-<!--                    <span class="text-gray-700 mr-4" th:text="${#authentication.name}"></span>-->
-<!--                    <form th:action="@{/log out}" method="post" class="inline">-->
-<!--                        <button type="submit"-->
-<!--                                class="btn-secondary text-black px-6 py-2 rounded-lg shadow-lg">-->
-<!--                            Logout-->
-<!--                        </button>-->
-<!--                    </form>-->
-<!--                </div>-->
+                <div sec:authorize="isAuthenticated()">
+                    <span class="text-gray-700 mr-4" th:text="${#authentication.name}"></span>
+                    <form th:action="@{/logout}" method="post" class="inline">
+                        <button type="submit"
+                                class="btn-secondary text-white px-6 py-2 rounded-lg shadow-lg">
+                            Logout
+                        </button>
+                    </form>
+                </div>
 
                 <!-- Language Toggle -->
-<!--                <button onclick="toggleLanguage()" class="language-toggle flex items-center text-gray-700 hover:text-primary transition-colors">-->
-<!--                    <span id="lang-toggle">සිං</span>-->
-<!--                </button>-->
+                <!--                <button onclick="toggleLanguage()" class="language-toggle flex items-center text-gray-700 hover:text-primary transition-colors">-->
+                <!--                    <span id="lang-toggle">සිං</span>-->
+                <!--                </button>-->
             </div>
 
             <!-- Mobile menu button remains the same -->
@@ -76,36 +76,7 @@
     </div>
 </nav>
 
-<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <section class="grid md:grid-cols-2 gap-8 items-center">
-        <div>
-            <h1 class="text-3xl md:text-5xl font-extrabold text-gray-900 leading-tight">Affordable Health Insurance for Everyone</h1>
-            <p class="mt-4 text-gray-600">Protect your family with MediSure. Simple plans, transparent pricing, and fast claims support tailored for Sri Lankans.</p>
-            <div class="mt-6 flex gap-4">
-                <a href="#" class="bg-cyan-600 hover:bg-cyan-700 text-white px-6 py-3 rounded-lg shadow">Get a Quote</a>
-                <a href="/login" class="border border-cyan-600 text-cyan-700 hover:bg-cyan-50 px-6 py-3 rounded-lg">Login</a>
-            </div>
-        </div>
-        <div class="hidden md:block">
-            <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1200&auto=format&fit=crop" alt="Healthcare" class="rounded-2xl shadow-lg">
-        </div>
-    </section>
-
-    <section class="mt-16 grid md:grid-cols-3 gap-6">
-        <div class="p-6 border rounded-xl shadow-sm">
-            <h3 class="font-semibold text-gray-900">Low Premiums</h3>
-            <p class="text-gray-600 mt-2">Choose from plans starting as low as Rs. 500 per month.</p>
-        </div>
-        <div class="p-6 border rounded-xl shadow-sm">
-            <h3 class="font-semibold text-gray-900">Cashless Hospitals</h3>
-            <p class="text-gray-600 mt-2">Use our wide network of partner hospitals nationwide.</p>
-        </div>
-        <div class="p-6 border rounded-xl shadow-sm">
-            <h3 class="font-semibold text-gray-900">Fast Claims</h3>
-            <p class="text-gray-600 mt-2">90% of claims processed within 48 hours.</p>
-        </div>
-    </section>
-</main>
+<!-- Add your main content here -->
 
 </body>
 </html>
