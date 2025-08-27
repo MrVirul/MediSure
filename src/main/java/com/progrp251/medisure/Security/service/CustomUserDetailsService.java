@@ -1,5 +1,5 @@
 
-package com.progrp251.medisure.Security;
+package com.progrp251.medisure.Security.service;
 
 import com.progrp251.medisure.client.Client;
 import com.progrp251.medisure.client.ClientRepository;

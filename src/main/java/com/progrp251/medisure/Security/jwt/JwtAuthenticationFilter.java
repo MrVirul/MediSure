@@ -1,4 +1,4 @@
-package com.progrp251.medisure.Security;
+package com.progrp251.medisure.Security.jwt;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

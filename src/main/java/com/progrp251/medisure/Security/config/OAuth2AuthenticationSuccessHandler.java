@@ -1,5 +1,6 @@
-package com.progrp251.medisure.Security;
+package com.progrp251.medisure.Security.config;
 
+import com.progrp251.medisure.Security.jwt.JwtTokenProvider;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

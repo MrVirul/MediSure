@@ -1,5 +1,5 @@
 
-package com.progrp251.medisure.Security;
+package com.progrp251.medisure.Security.jwt;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
