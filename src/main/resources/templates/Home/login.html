@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,13 +15,18 @@
         }
     </style>
 </head>
-<body class="min-h-screen bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 flex items-center justify-center p-4">
 
-<div class="w-full max-w-md bg-white/60 backdrop-blur-xl border border-gray-200 rounded-2xl shadow-2xl p-8 space-y-6">
+<body
+        class="min-h-screen bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 flex items-center justify-center p-4">
+
+<div
+        class="w-full max-w-md bg-white/60 backdrop-blur-xl border border-gray-200 rounded-2xl shadow-2xl p-8 space-y-6">
 
     <div class="text-center">
-        <svg class="mx-auto h-10 w-auto text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
+        <svg class="mx-auto h-10 w-auto text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none"
+             viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
         </svg>
         <h1 class="mt-4 text-3xl font-bold text-gray-900">Welcome Back</h1>
         <p class="mt-2 text-sm text-gray-600">Sign in to continue to MediSure</p>
@@ -31,8 +37,10 @@
             <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
             <div class="relative mt-1">
                 <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                    <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M10 8a3 3 0 100-6 3 3 0 000 6zM3.465 14.493a1.23 1.23 0 00.41 1.412A9.957 9.957 0 0010 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.41-1.412A6.995 6.995 0 0010 11.5a6.995 6.995 0 00-6.535 2.993z" />
+                    <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                         fill="currentColor">
+                        <path
+                                d="M10 8a3 3 0 100-6 3 3 0 000 6zM3.465 14.493a1.23 1.23 0 00.41 1.412A9.957 9.957 0 0010 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.41-1.412A6.995 6.995 0 0010 11.5a6.995 6.995 0 00-6.535 2.993z" />
                     </svg>
                 </div>
                 <input id="username" name="username" type="text" placeholder="your.username" required
@@ -44,8 +52,11 @@
             <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
             <div class="relative mt-1">
                 <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                    <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd" />
+                    <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                         fill="currentColor">
+                        <path fill-rule="evenodd"
+                              d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z"
+                              clip-rule="evenodd" />
                     </svg>
                 </div>
                 <input id="password" name="password" type="password" placeholder="••••••••" required
@@ -57,7 +68,8 @@
             <a href="#" class="text-sm font-medium text-blue-600 hover:text-blue-500">Forgot your password?</a>
         </div>
 
-        <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform duration-200 hover:scale-105">
+        <button type="submit"
+                class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform duration-200 hover:scale-105">
             Sign in
         </button>
     </form>
@@ -68,18 +80,72 @@
         <div class="flex-grow border-t border-gray-300"></div>
     </div>
 
-    <a href="/oauth2/authorization/google" class="w-full inline-flex justify-center items-center gap-3 border border-gray-300 bg-white text-gray-700 py-3 rounded-lg hover:bg-gray-50 transition-all duration-300 shadow-sm font-medium">
-        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" class="h-5 w-5" />
+    <a href="/oauth2/authorization/google"
+       class="w-full inline-flex justify-center items-center gap-3 border border-gray-300 bg-white text-gray-700 py-3 rounded-lg hover:bg-gray-50 transition-all duration-300 shadow-sm font-medium">
+        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google"
+             class="h-5 w-5" />
         Continue with Google
     </a>
 
+    <!-- Alternative: Dedicated Sign Up Button -->
+    <button type="button" onclick="window.location.href='/signup'"
+            class="w-full flex justify-center py-3 px-4 border border-blue-600 rounded-lg shadow-sm text-sm font-medium text-blue-600 bg-white hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200">
+        Create New Account
+    </button>
+
+    <!-- Sign up link moved outside the form container -->
     <div class="text-center mt-6">
         <p class="text-sm text-gray-600">
             Don't have an account?
-            <a href="#" class="font-medium text-blue-600 hover:text-blue-500">Sign up</a>
+            <a href="/signup" class="font-medium text-blue-600 hover:text-blue-500 transition-colors duration-200" onclick="handleSignupClick(event)">Sign up</a>
         </p>
     </div>
 </div>
 
+<script>
+    function handleSignupClick(event) {
+        // Prevent any default behavior and ensure navigation
+        event.preventDefault();
+        event.stopPropagation();
+
+        // Add visual feedback
+        const link = event.target;
+        link.style.opacity = '0.7';
+        link.innerHTML = 'Redirecting...';
+
+        // Navigate to signup page
+        setTimeout(function() {
+            window.location.href = '/signup';
+        }, 100);
+    }
+
+    // Additional safeguard to prevent form submission when clicking signup
+    document.addEventListener('DOMContentLoaded', function() {
+        const signupLinks = document.querySelectorAll('a[href="/signup"]');
+        signupLinks.forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                window.location.href = '/signup';
+            });
+        });
+
+        // Prevent form submission when Enter is pressed on signup link
+        const form = document.querySelector('form');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                // Only submit if it's actually the submit button
+                const activeElement = document.activeElement;
+                if (activeElement && activeElement.getAttribute('href') === '/signup') {
+                    e.preventDefault();
+                    window.location.href = '/signup';
+                    return false;
+                }
+            });
+        }
+    });
+</script>
+
 </body>
+
 </html>
