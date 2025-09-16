@@ -10,14 +10,13 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.security.AuthProvider;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.List;  // Added missing import
+import java.util.List;  
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Builder
-@Table(name = "clients")  // Changed to plural (convention)
 public class Client {
 
     // Basic Information
